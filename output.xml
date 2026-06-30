@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-06-30T19:26:07.416048" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="C:\Users\LENOVO\Desktop\Task19\tests\login_test.robot">
+<test id="s1-t1" name="Verify Successful Login And Logout" line="7">
+<kw name="Open Robot SpareBin Website" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-30T19:26:07.847895" level="INFO">Opening browser 'chrome' to base url 'https://robotsparebinindustries.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-30T19:26:07.847618" elapsed="2.098426"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-30T19:26:09.946531" elapsed="0.126321"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-30T19:26:10.073459" elapsed="0.655904"/>
+</kw>
+<doc>Opens the Chrome browser and navigates to the Robot SpareBin Industries application.</doc>
+<status status="PASS" start="2026-06-30T19:26:07.846504" elapsed="2.883065"/>
+</kw>
+<kw name="Login To Application" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-30T19:26:10.731154" level="INFO">Typing text 'maria' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-30T19:26:10.730765" elapsed="0.112678"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-30T19:26:10.844080" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-06-30T19:26:10.893048" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-30T19:26:10.843676" elapsed="0.132483"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-30T19:26:10.976680" level="INFO">Clicking button 'Log in'.</msg>
+<arg>Log in</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-30T19:26:10.976391" elapsed="0.106834"/>
+</kw>
+<doc>Enters valid username and password and logs into the application.</doc>
+<status status="PASS" start="2026-06-30T19:26:10.730267" elapsed="0.353147"/>
+</kw>
+<kw name="Verify Login Is Successful" owner="keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>maria</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-30T19:26:11.084193" elapsed="0.016953"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(.,'Log out')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-30T19:26:11.101444" elapsed="2.280782"/>
+</kw>
+<doc>Verifies successful login by checking the logged-in username and Log out button.</doc>
+<status status="PASS" start="2026-06-30T19:26:11.083855" elapsed="2.298527"/>
+</kw>
+<kw name="Logout From Application" owner="keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-30T19:26:13.383739" level="INFO">Clicking button 'xpath=//button[contains(.,'Log out')]'.</msg>
+<arg>xpath=//button[contains(.,'Log out')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-30T19:26:13.383442" elapsed="0.114476"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-30T19:26:13.498303" elapsed="2.747404"/>
+</kw>
+<doc>Logs out from the application and verifies the login page is displayed again.</doc>
+<status status="PASS" start="2026-06-30T19:26:13.383036" elapsed="2.862787"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-30T19:26:16.246251" elapsed="2.493742"/>
+</kw>
+<status status="PASS" start="2026-06-30T19:26:07.845620" elapsed="10.894826"/>
+</test>
+<status status="PASS" start="2026-06-30T19:26:07.418280" elapsed="11.323235"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Test" id="s1" pass="1" fail="0" skip="0">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
